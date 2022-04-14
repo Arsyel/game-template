@@ -1,4 +1,5 @@
 import AudioController from "../../modules/Audio";
+import FontLoader from "../../helpers/FontLoader";
 import SceneInfo from "../../const/SceneInfo";
 import ScreenUtilityController from "../../modules/ScreenUtility";
 
@@ -12,6 +13,9 @@ class BootSceneController extends Phaser.Scene {
     Promise.allSettled([
       ScreenUtilityController.getInstance().init(this.scale),
       AudioController.getInstance().init(this),
+      FontLoader([
+        { key: 'gotham', url: 'fonts/gotham-bold.woff' },
+      ]),
     ])
       .then(() => {
         this.scene.launch(SceneInfo.LOADING.key);

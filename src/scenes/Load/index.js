@@ -24,7 +24,10 @@ class LoadSceneController extends Phaser.Scene {
 
   loadGameResources() {
     // LOAD ALL GAME FILE HERE!
-    this.load.image('logo', 'img/logo.png');
+  }
+
+  offPreloadScreen() {
+    document.getElementById("game-preload-screen").style.setProperty("display", "none");
   }
 
   onCompleteLoadBoot() {
@@ -34,6 +37,7 @@ class LoadSceneController extends Phaser.Scene {
   }
 
   onCompleteLoad() {
+    this.offPreloadScreen();
     this.load.removeAllListeners();
     this.scene.start(SceneInfo.TITLE.key);
   }

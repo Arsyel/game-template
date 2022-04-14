@@ -122,7 +122,7 @@ class Transform {
     this.setDisplayWidth(value * this._gameObject.width, true);
   }
 
-  getDisplayPositionFromCoordinate(x, y) {
+  getDisplayPositionFromCoordinate(x, y = x) {
     return new Phaser.Math.Vector2(
       this._gameObject.x + (x - this._gameObject.originX) * this._gameObject.displayWidth,
       this._gameObject.y + (y - this._gameObject.originY) * this._gameObject.displayHeight,
