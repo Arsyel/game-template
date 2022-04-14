@@ -26,18 +26,19 @@ class LoadSceneController extends Phaser.Scene {
     // LOAD ALL GAME FILE HERE!
   }
 
-  offPreloadScreen() {
+  hidePreloadScreen() {
     document.getElementById("game-preload-screen").style.setProperty("display", "none");
   }
 
   onCompleteLoadBoot() {
+    this.hidePreloadScreen();
+
     this.load.once('complete', this.onCompleteLoad);
     this.loadGameResources();
     this.load.start(); // Execute: onCompleteLoad
   }
 
   onCompleteLoad() {
-    this.offPreloadScreen();
     this.load.removeAllListeners();
     this.scene.start(SceneInfo.TITLE.key);
   }
