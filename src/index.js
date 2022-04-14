@@ -15,7 +15,6 @@ const gameConfig = {
     mode: Phaser.Scale.FIT,
     width: screenProfile.width,
     height: screenProfile.height,
-		autoCenter: Phaser.Scale.CENTER_BOTH,
     autoRound: true,
   },
 	render: {

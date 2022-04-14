@@ -4,9 +4,10 @@ body {
 	overflow: hidden;
 }
 
-body #game-content {
+#game-content {
 	display: flex;
-	height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
 a, button, #game-content {
