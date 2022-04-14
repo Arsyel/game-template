@@ -1,3 +1,4 @@
+import AudioController from "../../modules/Audio";
 import SceneInfo from "../../const/SceneInfo";
 import ScreenUtilityController from "../../modules/ScreenUtility";
 
@@ -10,7 +11,7 @@ class BootSceneController extends Phaser.Scene {
     console.log('Init Boot');
     Promise.allSettled([
       ScreenUtilityController.getInstance().init(this.scale),
-      // AudioController.getInstance().init(this),
+      AudioController.getInstance().init(this),
     ])
       .then(() => {
         this.scene.launch(SceneInfo.LOADING.key);

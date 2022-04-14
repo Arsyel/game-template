@@ -1,4 +1,6 @@
+import GameplayView from "./view";
 import SceneInfo from "../../const/SceneInfo";
+import ScreenUtilityController from "../../modules/ScreenUtility";
 
 class GameplaySceneController extends Phaser.Scene {
   constructor() {
@@ -7,11 +9,11 @@ class GameplaySceneController extends Phaser.Scene {
 
   init() {
     console.log('Init Gameplay');
+    this.view = new GameplayView(this, ScreenUtilityController.getInstance());
   }
 
   create() {
-    // this.view.create();
-    console.log('GAWE EUY!');
+    this.view.create();
   }
 }
 

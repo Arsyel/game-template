@@ -24,6 +24,7 @@ class LoadSceneController extends Phaser.Scene {
 
   loadGameResources() {
     // LOAD ALL GAME FILE HERE!
+    this.load.image('logo', 'img/logo.png');
   }
 
   onCompleteLoadBoot() {
