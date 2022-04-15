@@ -11,12 +11,12 @@ class Transform {
   _scaleManager;
 
   /**
-   * @param {Phaser.Scene} scene
+   * @param {Phaser.Scale.ScaleManager} scale
    * @param {GameObject} gameObject
    */
-  constructor(scene, gameObject) {
+  constructor(scale, gameObject) {
+    this._scaleManager = scale;
     this._gameObject = gameObject;
-    this._scaleManager = scene.scale;
   }
 
   get position() {

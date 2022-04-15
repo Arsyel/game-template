@@ -1,0 +1,32 @@
+import Transform from "../Transform";
+
+class Image {
+  /** @private */
+  _gameObject;
+
+  /** @private */
+  _transform;
+
+  /**
+   * @param {Phaser.Scene} scene
+   * @param {string} textureKey
+   * @param {number} x
+   * @param {number} y
+   * @param {number} ratio
+   */
+  constructor(scene, textureKey, x, y = x, ratio = 1) {
+    this._gameObject = scene.add.image(x, y, textureKey);
+    this._transform = new Transform(scene.scale, this._gameObject);
+    this._transform.setToScaleDisplaySize(ratio);
+  }
+
+  get gameObject() {
+    return this._gameObject;
+  }
+
+  get transform() {
+    return this._transform;
+  }
+}
+
+export default Image;
