@@ -14,6 +14,7 @@ class LoadSceneController extends Phaser.Scene {
 
   loadBootResources() {
     // LOAD LOADING FILE HERE!
+    this.load.image('logo', 'img/logo.png');
   }
 
   preload() {

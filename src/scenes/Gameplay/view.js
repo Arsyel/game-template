@@ -1,4 +1,4 @@
-import Transform from '../../modules/Transform';
+import Image from '../../modules/GameObjects/Image';
 
 class GameplayView {
   /**
@@ -12,9 +12,9 @@ class GameplayView {
 
   create() {
     const { centerX, centerY, width, height } = this._screenUtil;
-    const logo = this._scene.add.image(centerX, centerY, 'logo')
-    const logoTf = new Transform(this._scene, logo);
-    logoTf.setMaxPreferredDisplaySize(width, height);
+
+    const logo = new Image(this._scene, 'logo', centerX, centerY);
+    logo.transform.setMaxPreferredDisplaySize(width, height);
   }
 }
 
