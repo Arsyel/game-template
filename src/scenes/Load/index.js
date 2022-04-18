@@ -1,4 +1,5 @@
 import SceneInfo from "../../const/SceneInfo";
+import { hidePreloadScreen } from "../../helpers/PreloadScreen";
 
 class LoadSceneController extends Phaser.Scene {
   constructor() {
@@ -27,12 +28,8 @@ class LoadSceneController extends Phaser.Scene {
     // LOAD ALL GAME FILE HERE!
   }
 
-  hidePreloadScreen() {
-    document.getElementById("game-preload-screen").style.setProperty("display", "none");
-  }
-
   onCompleteLoadBoot() {
-    this.hidePreloadScreen();
+    hidePreloadScreen();
 
     this.load.once('complete', this.onCompleteLoad);
     this.loadGameResources();
