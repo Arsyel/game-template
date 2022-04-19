@@ -1,5 +1,5 @@
 import SceneInfo from "../../const/SceneInfo";
-import { hidePreloadScreen } from "../../helpers/PreloadScreen";
+import { hidePreloadScreen } from "../../helpers/ElementControl";
 
 class LoadSceneController extends Phaser.Scene {
   constructor() {

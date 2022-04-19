@@ -24,3 +24,31 @@ a, button, #game-content {
   background-color: #ffffff;
   z-index: 10;
 }
+
+#loading-spinner {
+  position: absolute;
+  display: none;
+  width: 80px;
+  height: 80px;
+}
+
+#loading-spinner:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid rgb(255, 255, 255);
+  border-color: rgb(255, 255, 255) transparent rgb(255, 255, 255) transparent;
+  animation: loading-spinner 1.2s linear infinite;
+}
+
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
