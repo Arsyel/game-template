@@ -6,7 +6,7 @@ module.exports = env => {
 	console.log('ENV:', env);
 	return {
 		entry: {
-			app: path.resolve('/', '../src/index.js')
+			app: path.resolve(__dirname, '../src/index.js')
 		},
 		mode: 'development',
 		devtool: 'eval-source-map',
